@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+
+  <head>
+    <title>5x7</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+     <link rel="stylesheet" type="text/css" media="all" href="/css/forms.css" th:href="@{/css/forms.css}"/>
+  </head>
+
+  <body>
+  
+    <div class="form-style-5">
+	    <form action="#" th:action="@{/reports/add5x7}" th:object="${report}" method="post">
+	    	<fieldset>
+	    		<legend th:text="#{cincox7.welcome}" />
+	    		<legend><span class="number">1</span><span th:text="#{cincox7.coyavim}" /></legend>
+		    	<label th:for="${#ids.next('devotionals')}"><span th:text="#{cincox7.devotionals}" />: <input type="number" th:field="*{devotionals}"/></label>
+		    	
+		    	
+		    	<label th:for="${#ids.next('fasting')}"><span th:text="#{cincox7.fasting}"/> <input type="checkbox" th:field="*{fasting}" /></label>
+		    	
+		    	
+		    	<label th:for="${#ids.next('worship')}"><span th:text="#{cincox7.worship}"/> <input type="checkbox" th:field="*{worship}" /></label>
+		    	
+		    	<label th:for="${#ids.next('prayingChain')}"><span th:text="#{cincox7.prayingChain}"/> <input type="checkbox" th:field="*{prayingChain}" /></label>
+		    	
+		    	<label th:for="${#ids.next('vigilia')}"><span th:text="#{cincox7.vigilia}"/> <input type="checkbox" th:field="*{vigilia}" /></label>
+		    	
+		    	<br/>
+		    	
+		    	<legend><span class="number">2</span><span th:text="#{cincox7.clase}" /></legend>
+		    	
+		    	<label th:for="${#ids.next('cf')}"><span th:text="#{cincox7.cf}"/> <input type="checkbox" th:field="*{cf}" /></label>
+		    	
+		    	<label th:for="${#ids.next('leadershipCourse')}"><span th:text="#{cincox7.leadershipCourse}"/> <input type="checkbox" th:field="*{leadershipCourse}" /></label>
+		    	
+		    	<br/>
+		    	
+		    	<legend><span class="number">3</span><span th:text="#{cincox7.finance}" /></legend>
+		    	<label th:for="${#ids.next('supportFamily')}"><span th:text="#{cincox7.supportFamily}"/> <input type="checkbox" th:field="*{supportFamily}" /></label>
+		    	
+		    	<label th:for="${#ids.next('tith')}"><span th:text="#{cincox7.tith}"/> <input type="checkbox" th:field="*{tith}" /></label>
+		    	<label th:for="${#ids.next('budget')}"><span th:text="#{cincox7.budget}"/> <input type="checkbox" th:field="*{budget}" /></label>
+		    	
+		    	<br/>
+		    	
+		    	<legend><span class="number">4</span><span th:text="#{cincox7.service}" /></legend>
+		    	<label th:for="${#ids.next('cellGroup')}"><span th:text="#{cincox7.cellGroup}"/> <input type="checkbox" th:field="*{cellGroup}" /></label>
+		    	<label th:for="${#ids.next('cellGroupAttendance')}"><span th:text="#{cincox7.cellGroupAttendance}" />: <input type="number" th:field="*{cellGroupAttendance}"/></label>
+		    	<label th:for="${#ids.next('evangelism')}"><span th:text="#{cincox7.evangelism}" />: <input type="number" th:field="*{evangelism}"/></label>
+		    	
+		    	<br/>
+		    	
+		    	<legend><span class="number">5</span><span th:text="#{cincox7.theotherapy}" /></legend>
+		    	<label th:for="${#ids.next('pastoral')}"><span th:text="#{cincox7.pastoral}"/> <input type="checkbox" th:field="*{pastoral}" /></label>
+		    	<label th:for="${#ids.next('ministerio')}"><span th:text="#{cincox7.ministerio}"/> <input type="checkbox" th:field="*{ministerio}" /></label>
+		    	<label th:for="${#ids.next('rayces')}"><span th:text="#{cincox7.rayces}"/> <input type="checkbox" th:field="*{rayces}" /></label>
+		    	<label th:for="${#ids.next('leaderCell')}"><span th:text="#{cincox7.leaderCell}"/> <input type="checkbox" th:field="*{leaderCell}" /></label>
+		    	
+		    	<br/>
+		    	<button type="submit" name="addWeek" th:text="#{cincox7.addWeek}" class="button">Add week</button>
+	    	</fieldset>
+		</form>
+	</div>
+  
+  </body>
+
+</html>
