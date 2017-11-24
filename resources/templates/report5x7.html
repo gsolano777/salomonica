@@ -9,10 +9,10 @@
 
   <body>
   
+    <h1 th:text="#{cincox7.week(${report.week})}">Semana x</h1>
     <div class="form-style-5">
 	    <form action="#" th:action="@{/reports/add5x7}" th:object="${report}" method="post">
 	    	<fieldset>
-	    		<legend th:text="#{cincox7.welcome}" />
 	    		<legend><span class="number">1</span><span th:text="#{cincox7.coyavim}" /></legend>
 		    	<label th:for="${#ids.next('devotionals')}"><span th:text="#{cincox7.devotionals}" />: <input type="number" th:field="*{devotionals}"/></label>
 		    	
@@ -58,6 +58,9 @@
 		    	<label th:for="${#ids.next('leaderCell')}"><span th:text="#{cincox7.leaderCell}"/> <input type="checkbox" th:field="*{leaderCell}" /></label>
 		    	
 		    	<br/>
+		    	<input type="hidden" th:field="*{personId}" />
+		    	<input type="hidden" th:field="*{year}" />
+		    	<input type="hidden" th:field="*{week}" />
 		    	<button type="submit" name="addWeek" th:text="#{cincox7.addWeek}" class="button">Add week</button>
 	    	</fieldset>
 		</form>

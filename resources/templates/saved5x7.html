@@ -1,1 +1,53 @@
-saved!
+<html>
+
+  <head>
+    <title>5x7</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+     <link rel="stylesheet" type="text/css" media="all" href="/css/responsive-table.css" th:href="@{/css/responsive-table.css}"/>
+  </head>
+
+  <body>
+		<table>
+			<tr>
+			    <th th:text="#{cincox7.week.report}">Week</th>
+			    <th th:text="#{cincox7.devotionals.report}">Devocionales</th>
+			    <th th:text="#{cincox7.fasting.report}">Ayuno</th>
+			    <th th:text="#{cincox7.worship.report}">Alabanza</th>
+			    <th th:text="#{cincox7.prayingChain.report}">Cadena de Oración</th>
+			    <th th:text="#{cincox7.vigilia.report}">Vigilia Mensual</th>
+			    <th th:text="#{cincox7.cf.report}">CF</th>
+			    <th th:text="#{cincox7.leadershipCourse.report}">Curso de Liderazgo</th>
+			    <th th:text="#{cincox7.supportFamily.report}">Aporte Familiar</th>
+			    <th th:text="#{cincox7.budget.report}">Manejo de Presupuesto</th>
+			    <th th:text="#{cincox7.tith.report}">Diezmo</th>	
+			    <th th:text="#{cincox7.cellGroup.report}">Celula</th>
+			    <th th:text="#{cincox7.cellGroupAttendance.report}">Celula Asistencia</th>	
+			    <th th:text="#{cincox7.evangelism.report}">Evangelismo</th>	
+			    <th th:text="#{cincox7.pastoral.report}">Pastoral</th>
+			    <th th:text="#{cincox7.ministerio.report}">Ministerio</th>
+			    <th th:text="#{cincox7.rayces.report}">RAYCES</th>
+			    <th th:text="#{cincox7.leaderCell.report}">Célula Líder</th>
+		  	</tr>
+		    <tr data-th-each="report : ${reports}">
+		        <td data-th-text="${report.week}">...</td>
+		        <td data-th-text="${report.devotionals}">...</td>
+		        <td><input type="checkbox" disabled="true" th:attr="checked=${report.fasting} ? 'true' : 'false'"/></td>
+		        <td><input type="checkbox" disabled="true" th:attr="checked=${report.worship} ? 'true' : 'false'"/></td>
+		        <td><input type="checkbox" disabled="true" th:attr="checked=${report.prayingChain} ? 'true' : 'false'"/></td>
+		        <td><input type="checkbox" disabled="true" th:attr="checked=${report.vigilia} ? 'true' : 'false'"/></td>
+		        <td><input type="checkbox" disabled="true" th:attr="checked=${report.cf} ? 'true' : 'false'"/></td>
+		        <td><input type="checkbox" disabled="true" th:attr="checked=${report.leadershipCourse} ? 'true' : 'false'"/></td>
+		        <td><input type="checkbox" disabled="true" th:attr="checked=${report.supportFamily} ? 'true' : 'false'"/></td>
+		        <td><input type="checkbox" disabled="true" th:attr="checked=${report.budget} ? 'true' : 'false'"/></td>
+		        <td><input type="checkbox" disabled="true" th:attr="checked=${report.tith} ? 'true' : 'false'"/></td>
+		        <td><input type="checkbox" disabled="true" th:attr="checked=${report.cellGroup} ? 'true' : 'false'"/></td>
+		        <td data-th-text="${report.cellGroupAttendance}">...</td>
+		        <td data-th-text="${report.evangelism}">...</td>
+		        <td><input type="checkbox" disabled="true" th:attr="checked=${report.pastoral} ? 'true' : 'false'"/></td>
+		        <td><input type="checkbox" disabled="true" th:attr="checked=${report.ministerio} ? 'true' : 'false'"/></td>
+		        <td><input type="checkbox" disabled="true" th:attr="checked=${report.rayces} ? 'true' : 'false'"/></td>
+		        <td><input type="checkbox" disabled="true" th:attr="checked=${report.leaderCell} ? 'true' : 'false'"/></td>
+		    </tr>
+		</table>
+	</body>
+</html>

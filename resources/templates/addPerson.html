@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+
+  <head>
+    <title th:text="#{person.addPerson}" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+     <link rel="stylesheet" type="text/css" media="all" href="/css/forms.css" th:href="@{/css/forms.css}"/>
+  </head>
+
+  <body>
+     
+    <div class="form-style-5">
+	    <form action="#" th:action="@{/person/save}" th:object="${person}" method="post">
+	    	<fieldset>
+	    		
+		    	<label th:for="${#ids.next('name')}"><span th:text="#{person.firstName}" />: <input type="text" th:field="*{firstName}"/></label>
+		    	<label th:for="${#ids.next('lastName')}"><span th:text="#{person.lastName}" />: <input type="text" th:field="*{lastName}"/></label>
+		    	<label th:for="${#ids.next('email')}"><span th:text="#{person.email}" />: <input type="text" th:field="*{email}"/></label>
+		    	
+		    	<button type="submit" name="addPerson" th:text="#{person.addAction}" class="button">Add person</button>
+	    	</fieldset>
+		</form>
+	</div>
+  
+  </body>
+
+</html>

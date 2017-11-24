@@ -1,19 +1,34 @@
 package org.ict.salomonica.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
+
+import org.ict.salomonica.entity.Report5x7.Report5x7Key;
 
 import lombok.ToString;
 
 @ToString
 @Entity
-public class Report5x7 {
+@IdClass(Report5x7Key.class)
+public class Report5x7 {	
+
+	public static class Report5x7Key implements Serializable {		
+	    private long personId;	   
+	    private int week;	    
+	    private int year;
+	}
 	
 	@Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer id;
+	private long personId;
+
+	@Id   
+    private int week;
+
+	@Id
+    private int year;
 	
 	private int devotionals;
 	private boolean fasting; // Ayuno
@@ -32,6 +47,16 @@ public class Report5x7 {
 	private boolean ministerio;
 	private boolean rayces;
 	private boolean leaderCell;
+	
+	public Report5x7() {
+		
+	}
+	
+	public Report5x7(long personId, int year, int week) {
+		this.personId = personId;
+		this.year = year;
+		this.week = week;
+	}
 	
 	public int getDevotionals() {
 		return devotionals;
@@ -167,6 +192,30 @@ public class Report5x7 {
 
 	public void setLeaderCell(boolean leaderCell) {
 		this.leaderCell = leaderCell;
+	}
+
+	public int getWeek() {
+		return week;
+	}
+
+	public void setWeek(int week) {
+		this.week = week;
+	}
+
+	public long getPersonId() {
+		return personId;
+	}
+
+	public void setPersonId(long personId) {
+		this.personId = personId;
+	}
+
+	public int getYear() {
+		return year;
+	}
+
+	public void setYear(int year) {
+		this.year = year;
 	}
 
 }

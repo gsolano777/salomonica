@@ -1,0 +1,19 @@
+<html>
+
+  <head>
+    <title>5x7</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+     <link rel="stylesheet" type="text/css" media="all" href="/css/responsive-table.css" th:href="@{/css/responsive-table.css}"/>
+  </head>
+
+  <body>
+	<table>
+    <tr data-th-each="person : ${persons}">
+        <td data-th-text="${person.firstName}">...</td>
+        <td data-th-text="${person.lastName}">...</td>
+        <td data-th-text="${person.email}">...</td>
+        <td><a href="addReport.html" th:href="@{/reports/5x7(personId=${person.id})}" th:text="#{cincox7.addLink}">5x7</a></td>
+    </tr>
+	</table>
+</body>
+</html>
